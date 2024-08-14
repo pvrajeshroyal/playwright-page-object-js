@@ -11,6 +11,7 @@ test('add person', async ({ page }) => {
   await login.signIn(data.userName, data.password);
 
   let title = page.locator('h1.main-title');
+  await waitForPaceLoader(page);
   await expect(title).toContainText('Add new person');
   
   // Add person
